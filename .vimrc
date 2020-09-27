@@ -4,6 +4,11 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+"end snippets
 call plug#end()
 "close vim and reopen and :PlugInstall to install new plugins
 
@@ -55,6 +60,9 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 "  let g:ale_fixers = {
 "    'javascript': ['eslint'],
 "  }
+
+"gitgutter settings
+let g:gitgutter_enabled = 0
 
 "coc.nvim settings
 let g:coc_node_path = $HOME.'/.nvm/versions/node/v10.15.3/bin/node'

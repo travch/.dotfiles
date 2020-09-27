@@ -15,3 +15,5 @@
   depgraph = !git madge image --webpack-config webpack.config.js --basedir . --style solarized-dark src
   # open every changed file on a branch in a new tab for review - diff visible
   review = !vim -p $(git whatchanged --name-only --pretty="" origin..HEAD) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+  # undo the last commit but maintain the changes to the working tree
+  undo-commit = !git reset --soft HEAD^
