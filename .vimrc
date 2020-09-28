@@ -32,6 +32,12 @@ vnoremap ; :
 nnoremap <C-W>f <C-W>vgf
 inoremap kj <ESC>
 vnoremap kj <ESC>  
+" copy relative path (src/foo.txt)
+nnoremap <leader>cf :let @*=expand("%")<CR>
+" copy absolute path (/something/src/foo.txt)
+nnoremap <leader>cF :let @*=expand("%:p")<CR>
+" copy filename (foo.txt)
+nnoremap <leader>ct :let @*=expand("%:t")<CR>
 
 "brace auto-completion and easy out
 function! EmptyBrace(brace)

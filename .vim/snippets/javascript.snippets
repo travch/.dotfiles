@@ -10,3 +10,44 @@ snippet nfn "named fat arrow function"
 	const ${1} = (${2}) => {
 		${0}
 	};
+
+#rxjs
+snippet newO "new Observable"
+	new Observable((observer) => {
+		${0}
+	}).pipe(${1});
+
+snippet iTestScheduler "import TestScheduler"
+	import { TestScheduler } from 'rxjs/testing';
+
+snippet assertde "assert deep equal"
+	const assertDeepEqual = (actual, expected) => {
+		expect(actual).toEqual(expected);
+	};
+
+snippet rxjsTest "test scheduler block"
+	testScheduler.run(({ hot, flush, expectObservable }) => {
+		const action$ = hot('${1}', {
+			${1}: ${2},
+		});
+
+		const output$ = ${3}(action$);
+
+		expectObservable(output$).toBe('${4}', {
+			${4}: ${5},
+		});
+		flush();
+		${0}
+		done();
+	});
+
+#jest
+snippet testb "test block"
+	test('${1}', (${2:done}) => {
+		${0}
+	});
+
+snippet describeb "describe block"
+	describe('${1}', () => {
+		${0}
+	});
