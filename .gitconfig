@@ -17,3 +17,7 @@
   review = !vim -p $(git whatchanged --name-only --pretty="" origin..HEAD) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
   # undo the last commit but maintain the changes to the working tree
   undo-commit = !git reset --soft HEAD^
+  # open every file in a separate tab in vim
+  vim-grep = !vim -p `git grep --files-with-matches "$1"`
+  # delete branches that have been merged (using -D instead of -d cause we squash merge everything)
+  delete-merged = !git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
