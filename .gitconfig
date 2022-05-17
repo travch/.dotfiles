@@ -21,3 +21,5 @@
   vim-grep = !vim -p `git grep --files-with-matches "$1"`
   # delete branches that have been merged (using -D instead of -d cause we squash merge everything)
   delete-merged = !git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+  # grep for a second thing with results from a first
+  grep2 = !git grep --files-with-matches "$1" | xargs git grep "$2"
