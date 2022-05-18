@@ -5,3 +5,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export REVIEW_BASE=master
 alias dotfiles='/usr/bin/git --git-dir=/Users/travischrist/.dotfiles/ --work-tree=/Users/travischrist'
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
