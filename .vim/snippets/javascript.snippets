@@ -55,3 +55,22 @@ snippet describeb "describe block"
 	describe('${1}', () => {
 		${0}
 	});
+
+#react
+snippet newComponent "new react component file"
+	import React from 'react';
+	import PropTypes from 'proptypes';
+
+	const ${1} = ({
+
+	}) => {
+		return (
+
+		);
+	};
+
+	$1.propTypes = {
+
+	};
+
+	export default $1;
