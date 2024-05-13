@@ -24,6 +24,15 @@ snippet newO "new Observable"
 snippet iTestScheduler "import TestScheduler"
 	import { TestScheduler } from 'rxjs/testing';
 
+	const assertDeepEqual = (actual, expected) => {
+		expect(actual).toEqual(expected);
+	};
+
+	let testScheduler;
+	beforeEach(() => {
+		testScheduler = new TestScheduler(assertDeepEqual)
+	});
+
 snippet assertde "assert deep equal"
 	const assertDeepEqual = (actual, expected) => {
 		expect(actual).toEqual(expected);
@@ -74,3 +83,34 @@ snippet newComponent "new react component file"
 	};
 
 	export default $1;
+
+snippet imockStore "import mock store"
+	import configureStore from 'redux-mock-store';
+
+	const mockStore = configureStore();
+
+snippet newrxjstestfile "boiler plate for new test"
+	import { TestScheduler } from 'rxjs/testing';
+
+	const assertDeepEqual = (actual, expected) => {
+		expect(actual).toEqual(expected);
+	};
+
+	describe('', () => {
+		let testScheduler;
+		beforeEach(() => {
+			testScheduler = new TestScheduler(assertDeepEqual);	
+		});
+
+		test('', () => {
+
+		});
+	});
+
+#react
+snippet newMessage "new react-intl defineMessage obj"
+	${0}: {
+		defaultMessage: '${1}',
+		description: '${2}',
+	},
+

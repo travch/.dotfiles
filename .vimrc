@@ -82,9 +82,9 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 
 "enable following to save on battery power
 "let g:ale_lint_on_text_change='never'
-"  let g:ale_fixers = {
-"    'javascript': ['eslint'],
-"  }
+let g:ale_fixers = {
+      \  'javascript': ['eslint'],
+      \}
 
 "gitgutter settings
 let g:gitgutter_enabled = 1
