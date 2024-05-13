@@ -1,23 +1,9 @@
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+# This is Git's per-user configuration file.
 [user]
-	name = travch
-	email = travis.christ@shipstation.com
-[push]
-	default = simple
-[alias]
-  # list file names and their diff counts
-  stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
-  # build a dependency graph out of files changed (repo is too big for this to work rn)
-  depgraph = !git madge image --webpack-config webpack.config.js --basedir . --style solarized-dark src
-  # open every changed file on a branch in a new tab for review - diff visible
-  review = !vim -p $(git whatchanged --name-only --pretty="" origin..HEAD) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
-  # undo the last commit but maintain the changes to the working tree
-  undo-commit = !git reset --soft HEAD^
-  # open every file in a separate tab in vim
-  vim-grep = !vim -p `git grep --files-with-matches "$1"`
-  # delete branches that have been merged (using -D instead of -d cause we squash merge everything)
-  delete-merged = !git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+	name = Travis Christ
+	email = travis.christ@auctane.com
+# Please adapt and uncomment the following lines:
+#	name = Travis Christ
+#	email = travis.christ@auctane.com
+[http]
+	postBuffer = 157286400
